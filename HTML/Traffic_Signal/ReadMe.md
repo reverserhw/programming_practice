@@ -3,4 +3,4 @@
 
 
 ## Demo
-[Link](https://jsfiddle.net/bkwuwj9a/)
+[jsfiddle demo](https://jsfiddle.net/bkwuwj9a/)
