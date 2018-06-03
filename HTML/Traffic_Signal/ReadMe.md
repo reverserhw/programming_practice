@@ -1,5 +1,5 @@
 # What is this?
-*This is my study code XD*
+*This is my HTML5 study code XD*
 
 
 ## Demo
