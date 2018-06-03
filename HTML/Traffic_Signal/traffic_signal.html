@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title> :: Traffic Signal :: </title>
+</head>
+<body>
+   <strong><font size="15px"> This is traffic signal! XD XD </font></strong><br><br>
+<canvas id="myCanvas" width="450px" height="150px" style="border:5px solid #d3d3d3; background-color:#3f3f3f;">
+your browser does not support the HTML5 canvas tag. </canvas>
+
+<script type="text/javascript">
+   var c = document.getElementById('myCanvas');
+   
+   var ctx = c.getContext("2d");
+   var ctx2 = c.getContext("2d");
+   var ctx3 = c.getContext("2d");
+
+   ctx.beginPath();
+   ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+   ctx.fillStyle = "white";
+   ctx.fill();
+   ctx.stroke();
+   ctx.closePath();
+
+   ctx2.beginPath();
+   ctx2.arc(220, 75, 50, 0, 2 * Math.PI);
+   ctx2.fillStyle = "white";
+   ctx2.fill();
+   ctx2.stroke();
+   ctx2.closePath();
+
+   
+
+   green_circle_draw_delay = 1+Math.random()*(3000-1);
+   orange_circle_draw_delay = 3000+Math.random()*(6000-3000);
+   red_circle_draw_delay = 6000+Math.random()*(9000-6000);
+
+   function red_circle_draw() {
+      ctx.beginPath();
+      ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+      ctx.fillStyle = "red";
+      ctx.fill();
+      ctx.stroke();
+      ctx.closePath();
+   }
+   
+   function orange_circle_draw() {   
+      ctx2.beginPath();
+      ctx2.arc(220, 75, 50, 0, 2 * Math.PI);
+      ctx2.fillStyle = "#ff7f00";
+      ctx2.fill();
+      ctx2.stroke();
+      ctx2.closePath();
+   }
+
+   function green_circle_draw() {
+      ctx3.beginPath();
+      ctx3.arc(340, 75, 50, 0, 2 * Math.PI);
+      ctx3.fillStyle = "green";
+      ctx3.fill();
+      ctx3.stroke();
+      ctx3.closePath();
+   }
+
+   
+   //alert("Start Draw Circle");
+   ctx.beginPath();
+   ctx.arc(340, 75, 50, 0, 2 * Math.PI);
+   ctx.fillStyle = "white";
+   ctx.fill();
+   ctx.stroke();
+   ctx.closePath();
+   setTimeout(green_circle_draw, green_circle_draw_delay);
+
+   setTimeout(orange_circle_draw, orange_circle_draw_delay);
+   setTimeout(function() { ctx3.clearRect(280, 0, 200, 200);
+      ctx3.beginPath();
+      ctx3.arc(340, 75, 50, 0, 2 * Math.PI);
+      ctx3.fillStyle = "white";
+      ctx3.fill();
+      ctx3.stroke();
+      ctx3.closePath();
+   }, orange_circle_draw_delay);
+
+   setTimeout(red_circle_draw, red_circle_draw_delay);
+   setTimeout(function() { 
+      ctx2.clearRect(165, 0, 120, 200);
+      ctx2.beginPath();
+      ctx2.arc(220, 75, 50, 0, 2 * Math.PI);
+      ctx2.fillStyle = "white";
+      ctx2.fill();
+      ctx2.stroke();
+      ctx2.closePath();
+   }, red_circle_draw_delay+2000);
+
+   //setTimeout(function() { alert("Finished"); }, red_circle_draw_delay+100);
+</script>
+</body>
+</html>
