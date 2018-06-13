@@ -35,5 +35,5 @@ Subject Name : 어휴 개망겜ㅉㅉ
 
 ## I use the code another gallery!
 *If you another dcinside gallery use, You must edit filter word and url!*
-
+If you feedback and advice to me. E-mail send to me.
 Thx :)
