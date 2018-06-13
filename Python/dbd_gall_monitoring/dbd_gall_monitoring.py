@@ -8,14 +8,13 @@ from bs4 import BeautifulSoup
 import requests
 import time
 import ctypes
+import os
 
 def Warning_MsgBox():
 	return ctypes.windll.user32.MessageBoxA(0, "I found filter article!", "Monitoring", 0)
 
-def Warning_MsgBox():
-	return ctypes.windll.user32.MessageBoxA(0, "I found filter user!", "Monitoring", 0)
+filter_word = [u'윈,터,솔,져', u'일베', u'일베충', u'메갈', u'쿵쾅쿵쾅', u'노무현', u'윈터솔져', u'wintersoldier', u'blackpanther', u'panther', u'winter', u'솔져', u'discord', u'살구', u'살인마협회장', u'블랙팬서', u'블포 핵', u'핵 쓰는 법', u'광고글']
 
-filter_word = [u'노무현', u'윈터솔져', u'wintersoldier', u'blackpanther', u'black', u'winter', u'솔져', u'discord', u'살구', u'살인마협회장', u'블랙팬서', u'블포핵', u'블포 핵']
 while True:
 	url = "http://gall.dcinside.com/mgallery/board/lists/?id=dbd"
 	req_headers = {
@@ -31,11 +30,12 @@ while True:
 	subject = soup.find_all(class_="t_subject")
 
 	for i in range(0, 46):
-		print "Aritcle Number : "+notice[i].get_text()
-		print "Subject Name : "+subject[i].get_text()
-		print "---------------------------------------------"
 		for search in filter_word:
 			if search in subject[i].get_text():
-				Warning_MsgBox()
+				print "Aritcle Number : "+notice[i].get_text()
+				print "Subject Name : "+subject[i].get_text()
+				print "---------------------------------------------"
+				#Warning_MsgBox()
 				break;
 	time.sleep(1)
+	os.system("cls")
