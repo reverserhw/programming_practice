@@ -1,6 +1,6 @@
 # dcinside dead by daylight minor gallery monitoring
 ## use manual
-Just execute dbd_gall_monitoring.py XD
+You just run dbd_gall_monitoring.py XD
 So, you look this screen :)
 
 ```
