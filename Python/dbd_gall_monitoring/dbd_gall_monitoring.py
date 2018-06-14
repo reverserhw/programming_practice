@@ -31,7 +31,7 @@ while True:
 	notice = soup.find_all(class_="t_notice")
 	subject = soup.find_all(class_="t_subject")
 
-	for i in range(0, 46):
+	for i in range(0, 45):
 		for search in filter_word:
 			if search in subject[i].get_text():
 				print "Article Number : "+notice[i].get_text()
