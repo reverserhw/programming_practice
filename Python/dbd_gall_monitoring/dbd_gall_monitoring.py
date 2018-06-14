@@ -25,7 +25,7 @@ while True:
 	try:
 		req = requests.get(url, headers=req_headers)
 	except req.exceptions.ConnectionError:
-		req = requests.get(url, headers=req_headers)
+		continue
 	soup = BeautifulSoup(req.content, "html.parser")
 	
 	notice = soup.find_all(class_="t_notice")
