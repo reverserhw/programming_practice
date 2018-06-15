@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Remote Control MySQL </title>
+	<title> Local Control MySQL </title>
 </head>
 <body>
 <form method="get">
 	<table border="1">
 		<tr>
 			<th colspan="2"> MySQL Connect </th>
-		</tr>
-		<tr>
-			<td> Your HOST : </td>
-			<td><input type="text" name="hostname"></td>
 		</tr>
 		<tr>
 			<td> Your ID : </td>
@@ -41,7 +37,7 @@
 </html>
 
 <?php
-$hostname = $_GET['hostname'];
+$hostname = "localhost";
 $username = $_GET['username'];
 $userpass = $_GET['userpass'];
 $db_name = $_GET['database'];
