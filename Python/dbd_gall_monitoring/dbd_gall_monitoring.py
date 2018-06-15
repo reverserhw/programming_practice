@@ -25,6 +25,7 @@ while True:
 	try:
 		req = requests.get(url, headers=req_headers)
 	except req.exceptions.ConnectionError:
+		time.sleep(3)
 		continue
 	soup = BeautifulSoup(req.content, "html.parser")
 	
